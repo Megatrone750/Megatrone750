@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nakul Istam — Systems, Networking &amp; Security</title>
+    <meta
+      name="description"
+      content="Portfolio of Nakul Istam — systems programmer working on Linux networking, TLS fingerprinting, memory allocators, and concurrent servers."
+    />
+    <meta name="theme-color" content="#0b0d0c" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>N</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="mark" href="#top">NI</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="ghost-btn" href="https://github.com/Megatrone750" rel="noopener noreferrer">GitHub</a>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <p class="kicker">
+          <span class="pulse" aria-hidden="true"></span>
+          Live · GitHub Pages · Megatrone750
+        </p>
+        <h1>
+          Nakul Istam
+          <em>builds systems you can inspect.</em>
+        </h1>
+        <p class="lede">
+          I work close to the metal: Linux namespaces, TLS fingerprints, custom
+          allocators, sockets, and the glue that makes a network actually move
+          packets. This site is my public lab notebook.
+        </p>
+        <div class="hero-actions">
+          <a class="solid-btn" href="#work">See selected work</a>
+          <a class="text-btn" href="mailto:nakulistam7@gmail.com">nakulistam7@gmail.com</a>
+        </div>
+        <dl class="meta-strip">
+          <div>
+            <dt>Focus</dt>
+            <dd>Systems · Networking · Security</dd>
+          </div>
+          <div>
+            <dt>Stack</dt>
+            <dd>C · Python · Java · Bash · Linux</dd>
+          </div>
+          <div>
+            <dt>GitHub</dt>
+            <dd><a href="https://github.com/Megatrone750">@Megatrone750</a></dd>
+          </div>
+        </dl>
+      </section>
+
+      <section id="work" class="section">
+        <header class="section-head">
+          <p class="idx">01</p>
+          <h2>Selected work</h2>
+          <p>Projects from my GitHub that show how I think about isolation, memory, and traffic.</p>
+        </header>
+
+        <article class="featured">
+          <div class="featured-copy">
+            <p class="tag-row">
+              <span>Python</span><span>Linux</span><span>TLS</span><span>JA3</span>
+            </p>
+            <h3>
+              <a href="https://github.com/Megatrone750/Emulate-TLS-Fingerprinting-on-Network-Namespaces" rel="noopener noreferrer">
+                TLS fingerprinting on network namespaces
+              </a>
+            </h3>
+            <p>
+              A Linux lab with isolated <code>red</code> and <code>blue</code> hosts
+              wired through two virtual routers. Capture a TLS handshake, then
+              compute JA3 (client) and JA3S (server) fingerprints from the PCAP —
+              no extra machines required.
+            </p>
+            <a class="text-btn" href="https://github.com/Megatrone750/Emulate-TLS-Fingerprinting-on-Network-Namespaces" rel="noopener noreferrer">
+              Open repository →
+            </a>
+          </div>
+          <aside class="featured-panel" aria-hidden="true">
+            <pre>
+red  10.0.0.1 ── r1 ── r2 ── blue  10.0.2.2
+                 │      │
+              veth pairs + ip netns
+                 │
+            capture → JA3 / JA3S</pre>
+          </aside>
+        </article>
+
+        <div class="project-grid">
+          <article class="card">
+            <p class="tag-row"><span>C</span><span>Linux</span><span>sbrk</span></p>
+            <h3>
+              <a href="https://github.com/Megatrone750/Memory-Allocator" rel="noopener noreferrer">Memory Allocator</a>
+            </h3>
+            <p>
+              Educational <code>malloc</code> / <code>calloc</code> / <code>realloc</code> /
+              <code>free</code> on top of <code>sbrk()</code>. First-fit reuse, 16-byte
+              headers, pthread locking, and optional <code>LD_PRELOAD</code>.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="tag-row"><span>Java</span><span>Sockets</span></p>
+            <h3>
+              <a href="https://github.com/Megatrone750/Multi-Threaded-Web-Server" rel="noopener noreferrer">Java socket server</a>
+            </h3>
+            <p>
+              Client–server over raw Java sockets: listen, accept, exchange a
+              message, disconnect. A clean walkthrough of the request path
+              before frameworks get in the way.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="tag-row"><span>Bash</span><span>Nmap</span><span>TCP/IP</span></p>
+            <h3>
+              <a href="https://github.com/Megatrone750/Nmap-Script" rel="noopener noreferrer">Nmap scan helper</a>
+            </h3>
+            <p>
+              Interactive Bash wrapper around Nmap: target, scan type, optional
+              port range. Built for repeatable host discovery and port checks.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="tag-row"><span>Systems</span><span>In progress</span></p>
+            <h3>
+              <a href="https://github.com/Megatrone750/Own_Redis" rel="noopener noreferrer">Own Redis</a>
+            </h3>
+            <p>
+              Building a Redis-like server from first principles — protocol,
+              storage, and the parts of a datastore you only learn by writing
+              one.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section about">
+        <header class="section-head">
+          <p class="idx">02</p>
+          <h2>About</h2>
+        </header>
+        <div class="about-grid">
+          <div>
+            <p>
+              I like problems that force you to look at packets, heaps, and
+              process tables instead of dashboards. Most of my public work is
+              small, complete labs: isolate two hosts, allocate a block, accept
+              a socket — then explain what actually happened.
+            </p>
+            <p>
+              When I fork something, it is usually to learn the floor of a
+              stack: RISC-V bare metal, OS construction, or AI inference on
+              Xilinx hardware.
+            </p>
+          </div>
+          <ul class="skill-list">
+            <li>C &amp; Linux systems programming</li>
+            <li>Python for packet / TLS labs</li>
+            <li>Java sockets &amp; concurrency basics</li>
+            <li>Bash, Nmap, and network namespaces</li>
+            <li>Memory management and allocators</li>
+            <li>JA3 / JA3S TLS fingerprinting</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <header class="section-head">
+          <p class="idx">03</p>
+          <h2>Contact</h2>
+          <p>Open to internships, systems work, and security-minded collaboration.</p>
+        </header>
+        <ul class="contact-list">
+          <li>
+            <span>Email</span>
+            <a href="mailto:nakulistam7@gmail.com">nakulistam7@gmail.com</a>
+          </li>
+          <li>
+            <span>GitHub</span>
+            <a href="https://github.com/Megatrone750" rel="noopener noreferrer">github.com/Megatrone750</a>
+          </li>
+          <li>
+            <span>LinkedIn</span>
+            <a href="https://www.linkedin.com/in/nakul-istam-198a89144" rel="noopener noreferrer">nakul-istam</a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year">2026</span> Nakul Istam. Source is this repository.</p>
+      <p class="muted">Designed to stay readable without JavaScript.</p>
+    </footer>
+    <script src="assets/script.js"></script>
+  </body>
+</html>
